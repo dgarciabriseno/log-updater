@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Telework Log Updater",
+  "version": "1.0",
+
+  "description": "Interface for updating telework logs",
+
+  "icons": {
+    "48": "images/icon.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+
+  "browser_action": {
+      "default_icon": "images/icon.png",
+      "default_title": "Telework Updater",
+      "default_popup": "insert_form.html"
+  }
+}
+
