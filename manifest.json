@@ -5,6 +5,12 @@
 
   "description": "Interface for updating telework logs",
 
+  "browser_specific_settings": {
+    "gecko": {
+      "update_url": "https://github.com/dgarciabriseno/log-updater/releases/download/update-manifest/update-manifest.json"
+    }
+  },
+
   "icons": {
     "48": "images/icon.png"
   },
