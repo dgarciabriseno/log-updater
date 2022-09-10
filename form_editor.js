@@ -7,6 +7,25 @@
   if (window.hasRun) {
     return;
   }
+
+  function add_newline(el) {
+      let br = document.createElement('br');
+      el.appendChild(br);
+  }
+
+  function add_span(el, text) {
+      let span = document.createElement('span');
+      span.textContent = text;
+      el.appendChild(span);
+  }
+
+  function add_text(el, text) {
+      let lines = text.split('\n');
+      for (const line of lines) {
+          add_span(el, line);
+          add_newline(el);
+      }
+  }
   window.hasRun = true;
   let iframe = document.getElementsByTagName('iframe')[0].contentDocument;
   let editor = iframe.getElementById('tinymce');
@@ -18,10 +37,10 @@
     date_td.textContent = date;
 
     let text_td = document.createElement('td');
-    text_td.innerHTML = text.replace("\n", "<br/>");
+    add_text(text_td, text);
 
     let charge_td = document.createElement('td');
-    charge_td.innerHTML = charge.replace("\n", "<br/>");
+    add_text(charge_td, charge)
 
     let hours_td = document.createElement('td');
     hours_td.textContent = hours;
